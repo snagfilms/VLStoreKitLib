@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/snagfilms/iOS-VLStoreKit-SPM",
       "state" : {
-        "branch" : "develop",
-        "revision" : "34796d358502c8c7a39fe91a53221e106aa59c34"
+        "branch" : "main",
+        "revision" : "3102a60adea80ed8245fe3ddf8c50a177167cc19"
       }
     },
     {
