@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewPlansViewController" customModule="storekit_demo" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyListLabel" destination="LUt-rx-CHI" id="1MH-aQ-raw"/>
+                <outlet property="plansTableView" destination="N5y-RE-FV5" id="aub-Yu-g8q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="N5y-RE-FV5">
+                    <rect key="frame" x="0.0" y="158" width="393" height="660"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Chn-s6-fSK"/>
+                        <outlet property="delegate" destination="-1" id="rNP-T4-efw"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Plans Available" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUt-rx-CHI">
+                    <rect key="frame" x="8" y="423" width="377" height="31.333333333333314"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="544-fW-Cnz">
+                    <rect key="frame" x="117.66666666666669" y="91" width="158" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Restore Purchase"/>
+                    <connections>
+                        <action selector="restorePurchase:" destination="-1" eventType="touchUpInside" id="geR-fq-VGr"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="N5y-RE-FV5" firstAttribute="top" secondItem="544-fW-Cnz" secondAttribute="bottom" constant="32" id="4ql-kY-bMk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LUt-rx-CHI" secondAttribute="trailing" constant="8" id="LJ8-aj-vPL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N5y-RE-FV5" secondAttribute="trailing" id="M0X-5T-ZZf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N5y-RE-FV5" secondAttribute="bottom" id="Zyr-iK-myt"/>
+                <constraint firstItem="LUt-rx-CHI" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="bfy-QJ-BWw"/>
+                <constraint firstItem="N5y-RE-FV5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gVS-68-C0t"/>
+                <constraint firstItem="LUt-rx-CHI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="sJ5-7y-ZPY"/>
+                <constraint firstItem="544-fW-Cnz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="tJ6-h1-V9x"/>
+                <constraint firstItem="544-fW-Cnz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zNG-Hh-h2c"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
