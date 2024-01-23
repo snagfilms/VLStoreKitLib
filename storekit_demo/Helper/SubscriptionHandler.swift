@@ -52,8 +52,8 @@ final class SubscriptionHandler: NSObject {
     private let isStoreKitV2API:Bool = false
     private let apiSecretKey = "BkSBbok02k6RYUlCLRzI23wac0euoSfC3FP7uW2S"
     let deviceId = UUID().uuidString
-    let site = "liv-golf"
     let deviceType = "ios_phone"
+    let apiBaseUrl = "https://api.staging-livgolfplus.viewlift.com"
     
     
     private let authorizationToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlIjoibGl2LWdvbGYiLCJzaXRlSWQiOiI5ZWQ3ZGVlMC1jNzE5LTExZWMtYmMyNS1hMTk1YzJhMzQzNTciLCJpZCI6IjM0N2VmMjQ1LTUwYWEtNGI1NS05YjNlLTE5ZDE2ODlhOWQ5ZiIsInVzZXJJZCI6IjM0N2VmMjQ1LTUwYWEtNGI1NS05YjNlLTE5ZDE2ODlhOWQ5ZiIsImlwYWRkcmVzc2VzIjoiMTM4LjE5OS4zNS40NSwyMC4wLjEuMTAwIiwiY291bnRyeUNvZGUiOiJVUyIsInBvc3RhbGNvZGUiOiI5MDA2MCIsInByb3ZpZGVyIjoidmlld2xpZnQiLCJkZXZpY2VJZCI6ImJyb3dzZXItMGIyMjU1NjEtYWEyNy00YTQyLTYwZWMtNWY5NDEyZDc2NWNhIiwiZW1haWwiOiJyYWtlc2hpb3M3ODZAZ21haWwuY29tIiwiaWF0IjoxNzA1OTE0NTAzLCJleHAiOjE3MDU5MTU0MDN9.9xbSF6H48o064Sksvwwk6IBZ7JYtRAxEp5evE2_o5TE"
@@ -84,7 +84,7 @@ final class SubscriptionHandler: NSObject {
         
         storeKit.initateTransaction(productDetails: productDetails,
                                     transactionType: .purchase,
-                                    deviceId: SubscriptionHandler.shared.deviceId,
+                                    deviceId: deviceId,
                                     makeInternalSubscriptionCall: true,
                                     planId: selectedPlan.id)
     }
@@ -111,7 +111,7 @@ extension SubscriptionHandler: VLStoreKitAppStoreSubscriptionDelegate {
     }
     
     private func configureVLStoreKitFramework() {
-        VLStoreKit.setupConfig(apiKey: apiSecretKey, authorizationToken: authorizationToken)
+        VLStoreKit.setupConfig(apiKey: apiSecretKey, authorizationToken: authorizationToken, apiBaseUrl: apiBaseUrl)
         
         self.registerStoreKitCallbacks()
         
@@ -260,6 +260,7 @@ extension SubscriptionHandler {
     func restorePurchase() {
 //        Restoration of purchase logic using VLStoreKit
         CommonMethods.shared.showProgressIndicator()
+        
         self.storeKit.initateRestorePurchase { storeKitModel, error in
             self.proceedFurtherAfterRestorePurchase(storeKitModel: storeKitModel, error: error)
         }

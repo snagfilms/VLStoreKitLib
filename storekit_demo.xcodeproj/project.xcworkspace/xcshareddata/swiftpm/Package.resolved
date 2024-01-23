@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "ios-vlstorekit-spm",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/snagfilms/iOS-VLStoreKit-SPM",
-      "state" : {
-        "branch" : "main",
-        "revision" : "3102a60adea80ed8245fe3ddf8c50a177167cc19"
-      }
-    },
-    {
       "identity" : "socket.io-client-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/socketio/socket.io-client-swift.git",
