@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		D23DD9C32B56540E008ABEAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D23DD9C12B56540E008ABEAC /* LaunchScreen.storyboard */; };
 		D23DD9CF2B566AC3008ABEAC /* VLStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = D23DD9CE2B566AC3008ABEAC /* VLStoreKit */; };
 		D23DD9D22B569142008ABEAC /* SiteConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = D23DD9D12B569142008ABEAC /* SiteConfig.plist */; };
+		D29618A72B5F92CA004FCECC /* VLStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = D29618A62B5F92CA004FCECC /* VLStoreKit */; };
 		D2BFCC2B2B5A7A41002BA726 /* SubscriptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BFCC2A2B5A7A41002BA726 /* SubscriptionHandler.swift */; };
 		D2BFCC342B5A8010002BA726 /* double+conversionToInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BFCC332B5A8010002BA726 /* double+conversionToInt.swift */; };
 		D2BFCC362B5A807C002BA726 /* wrapped_int.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BFCC352B5A807C002BA726 /* wrapped_int.swift */; };
@@ -33,7 +34,6 @@
 		D2BFCC6B2B5D72D7002BA726 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BFCC692B5D72D7002BA726 /* SuccessViewController.swift */; };
 		D2BFCC6C2B5D72D7002BA726 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BFCC6A2B5D72D7002BA726 /* SuccessViewController.xib */; };
 		D2BFCC742B5E32D3002BA726 /* CommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BFCC732B5E32D3002BA726 /* CommonMethods.swift */; };
-		D2C1EAFA2B5E751300F9A6A9 /* VLStoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = D2C1EAF92B5E751300F9A6A9 /* VLStoreKit */; };
 		D2DB0F202B57E22D00502D2F /* ViewPlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB0F1E2B57E22D00502D2F /* ViewPlansViewController.swift */; };
 		D2DB0F212B57E22D00502D2F /* ViewPlansViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2DB0F1F2B57E22D00502D2F /* ViewPlansViewController.xib */; };
 		D2DB0F292B57E8F900502D2F /* PlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DB0F272B57E8F900502D2F /* PlanTableViewCell.swift */; };
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2C1EAFA2B5E751300F9A6A9 /* VLStoreKit in Frameworks */,
+				D29618A72B5F92CA004FCECC /* VLStoreKit in Frameworks */,
 				D2BFCC672B5D6D8B002BA726 /* SVProgressHUD in Frameworks */,
 				D23DD9CF2B566AC3008ABEAC /* VLStoreKit in Frameworks */,
 			);
@@ -230,7 +230,7 @@
 			packageProductDependencies = (
 				D23DD9CE2B566AC3008ABEAC /* VLStoreKit */,
 				D2BFCC662B5D6D8B002BA726 /* SVProgressHUD */,
-				D2C1EAF92B5E751300F9A6A9 /* VLStoreKit */,
+				D29618A62B5F92CA004FCECC /* VLStoreKit */,
 			);
 			productName = storekit_demo;
 			productReference = D23DD9B32B56540D008ABEAC /* storekit_demo.app */;
@@ -262,7 +262,7 @@
 			mainGroup = D23DD9AA2B56540D008ABEAC;
 			packageReferences = (
 				D2BFCC652B5D6D8B002BA726 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
-				D2C1EAF82B5E751300F9A6A9 /* XCRemoteSwiftPackageReference "iOS-VLStoreKit-SPM" */,
+				D29618A52B5F92CA004FCECC /* XCLocalSwiftPackageReference "../SPM/iOS-VLStoreKit-SPM" */,
 			);
 			productRefGroup = D23DD9B42B56540D008ABEAC /* Products */;
 			projectDirPath = "";
@@ -539,6 +539,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		D29618A52B5F92CA004FCECC /* XCLocalSwiftPackageReference "../SPM/iOS-VLStoreKit-SPM" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../SPM/iOS-VLStoreKit-SPM";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		D2BFCC652B5D6D8B002BA726 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -548,14 +555,6 @@
 				minimumVersion = 2.3.1;
 			};
 		};
-		D2C1EAF82B5E751300F9A6A9 /* XCRemoteSwiftPackageReference "iOS-VLStoreKit-SPM" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/snagfilms/iOS-VLStoreKit-SPM";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -563,15 +562,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = VLStoreKit;
 		};
+		D29618A62B5F92CA004FCECC /* VLStoreKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VLStoreKit;
+		};
 		D2BFCC662B5D6D8B002BA726 /* SVProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D2BFCC652B5D6D8B002BA726 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
 			productName = SVProgressHUD;
-		};
-		D2C1EAF92B5E751300F9A6A9 /* VLStoreKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D2C1EAF82B5E751300F9A6A9 /* XCRemoteSwiftPackageReference "iOS-VLStoreKit-SPM" */;
-			productName = VLStoreKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
